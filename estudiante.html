@@ -5,30 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Estudiantes</title>
     <link rel="stylesheet" href="styleestudiante.css">
-    <script type="module" src="scriptEstudiantes.js"></script>
+    <script type="module" src="scriptEstudiantes.js" defer></script>
 </head>
 <body>
     <header>
-        <nav class="menu active">
-            <a href="estudiante.html" class="menu-button">
-                <img src="src/alumno.gif" alt="Estudiantes">
-                <span>Estudiantes</span>
-            </a>
-            <a href="curso.html" class="menu-button">
-                <img src="src/libro-electronico.gif" alt="Cursos">
-                <span>Cursos</span>
-            </a>
-            <a href="#" class="menu-button">
-                <img src="src/conferenciante.gif" alt="Docentes">
-                <span>Docentes</span>
-            </a>
-            <a href="#" class="menu-button">
-                <img src="src/subir.gif" alt="Importar">
-                <span>Importar</span>
-            </a>
+        <div id="logo">
+            <a href="#">SICD</a>
+        </div>
+        <nav id="menu">
+            <button class="nav-mobile" id="nav-mobile" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#">Estudiante</a></li>
+                <li><a href="#">Curso</a></li>
+                <li><a href="#">Docente</a></li>
+                <li><a href="#">Importar</a></li>
+            </ul>
         </nav>
     </header>
-
     <main class="content">
         <section class="table-section">
             <table id="estudiantesTable">
