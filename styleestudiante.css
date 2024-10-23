@@ -11,54 +11,106 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    margin-top: 70px; /* Ajuste para el header fijo */
+   
 }
 
-/* Header y menú */
+
 header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 100;
+  background: #22282e;
+  height: 60px;
+  position: relative;
+  width: 100%;
 }
 
-.menu {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #273746;
-    padding: 15px 10px; /* Más espacio para mejorar la apariencia */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
 
-.menu-button {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+#logo {
+  float: left;
+  padding: 6px 20px;
+  width: auto;
+  height: 60px;
+
+  a {
+    display: block;
     text-decoration: none;
-    background-color: #ffffff;
-    color: #273746;
-    border-radius: 10px;
-    padding: 10px;
-    width: 90px;
-    height: 90px;
-    transition: all 0.3s ease;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    line-height: 44px;
+    text-transform: uppercase;
+  }
 }
 
-.menu-button img {
-    width: 50px;
-    height: 50px;
+
+#menu {
+  position: absolute;
+  top: 60px;
+  width: 100%;
+
+
+  ul {
+    max-height: 0;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 14px;
+  }
+
+
+  li {
+    display: block;
+    background: #33363b;
+    text-transform: uppercase;
+    text-align: center;
+    border-bottom: 1px solid #282b30;
+
+  
+    a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      line-height: 60px;
+      padding: 0 26px;
+
+      &:active,
+      &:focus   {
+        color: #ffc700;
+      }
+    }
+  }
+
+  
+  .open-menu {
+    box-shadow: 0 1px 2px rgba(0,0,0,.5);
+    max-height: 400px;
+    transition: max-height .4s ease;
+  }
 }
 
-.menu-button:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
 
-.menu-button span {
-    font-size: 16px;
-    color: #273746;
-}
+#nav-mobile {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  float: right;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  right: 0;
+  top: -60px;
+  opacity: 0.6;
+ }
+  .nav-open {
+    opacity: 1;
+  }
+
+  span {
+    display: block;
+    width: 60%;
+    margin: 4px auto;
+    height: 4px;
+    background: #fff
+  }
 
 /* Contenido principal */
 .content {
@@ -158,34 +210,7 @@ table td button:active {
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
-@media (max-width: 768px) {
-    .menu-button {
-        width: 60px;
-        height: 60px;
-    }
-
-    .menu-button img {
-        width: 30px;
-        height: 30px;
-    }
-
-    .menu-button span {
-        font-size: 12px;
-    }
-
-    aside {
-        width: 180px;
-    }
-
-    .content {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    table {
-        font-size: 12px;
-    }
-}
+ 
 /*estilo formulario de registro 
 /* Estilos para el modal */
 .modal {
@@ -285,3 +310,56 @@ button:hover {
     text-decoration: none; /* Sin subrayado */
     cursor: pointer; /* Cambia el cursor */
 }
+/* Estilos para el botón de menú */
+.menu-toggle {
+    display: none;
+    background-color: #273746;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 101; /* Asegura que esté por encima del menú */
+    border-radius: 5px;
+}
+@media only screen and (min-width: 768px) {
+  
+    #nav-mobile{ display: none; }
+  
+ 
+    #menu {
+      width: auto;
+      float: right;
+      top: 0;
+      position: relative;
+  
+      .open-menu {
+        box-shadow: none;
+      }
+  
+ 
+      ul {
+        max-height: inherit;
+      }
+  
+    
+      li {
+        float: left;
+        border: 0;
+        background: transparent;
+  
+        a {
+          display: block;
+          color: #fff;
+          padding: 0 26px;
+  
+          &:hover {
+            color: #ffc700;
+            background: #151a1e;
+          }
+        }
+      }
+    }
+  }
