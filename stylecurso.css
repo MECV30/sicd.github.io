@@ -1,0 +1,283 @@
+/* General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin-top: 70px; /* Ajuste para el header fijo */
+}
+
+/* Header y menú */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #273746;
+    padding: 15px 10px; /* Más espacio para mejorar la apariencia */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.menu-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    background-color: #ffffff;
+    color: #273746;
+    border-radius: 10px;
+    padding: 10px;
+    width: 90px;
+    height: 90px;
+    transition: all 0.3s ease;
+}
+
+.menu-button img {
+    width: 50px;
+    height: 50px;
+}
+
+.menu-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.menu-button span {
+    font-size: 16px;
+    color: #273746;
+}
+
+/* Contenido principal */
+.content {
+    display: flex;
+    flex-grow: 1;
+    padding: 20px;
+    margin-left: 80px;
+    justify-content: center;
+}
+
+.table-section {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+/* Estilos para la tabla */
+table {
+    width: 90%;
+    border-collapse: collapse;
+    margin-top: 10px; /* Espacio entre el título y la tabla */
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #273746;
+    color: white;
+}
+
+td {
+    background-color: white;
+    color: #273746;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #e0e0e0;
+}
+/* Estilo para los botones dentro de la tabla */
+table td button {
+    background-color: #12c238;
+    color: white;
+    border: none;
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+table td button:hover {
+    background-color: #1fa51a;
+}
+
+table td button:active {
+    background-color: #16912a;
+    transform: translateY(2px);
+}
+
+
+
+/* Botones flotantes */
+.floating-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.floating-button {
+    display: inline-block;
+    background-color: #07bb97;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+#buscar{
+    background-color: #273746;
+}
+.floating-button:hover {
+    background-color: #16a085;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .menu-button {
+        width: 60px;
+        height: 60px;
+    }
+
+    .menu-button img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .menu-button span {
+        font-size: 12px;
+    }
+
+    aside {
+        width: 180px;
+    }
+
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    table {
+        font-size: 12px;
+    }
+}
+
+/* Estilos del formulario */
+.modal-decimo {
+    display:none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content-decimo{
+    background-color: #ffffff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #273746;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    font-size: 14px;
+}
+
+button {
+    background-color: #1abc9c;
+    color: white;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 8px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #16a085;
+    transform: translateY(-2px);
+}
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close-button:hover,
+.close-button:focus {
+    color: rgb(241, 5, 5);
+    text-decoration: none;
+    cursor: pointer;
+}
+/* Botones flotantes */
+.floating-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.floating-button {
+    background-color: #273746;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    border-radius: 50px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.floating-button:hover {
+    background-color: #1a5276;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}

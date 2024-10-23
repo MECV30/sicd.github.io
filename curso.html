@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Estudiantes</title>
+    <link rel="stylesheet" href="stylecurso.css">
+    <script type="module" src="scriptCurso.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="menu active">
+            <a href="estudiante.html" class="menu-button">
+                <img src="src/alumno.gif" alt="Estudiantes">
+                <span>Estudiantes</span>
+            </a>
+            <a href="curso.html" class="menu-button">
+                <img src="src/libro-electronico.gif" alt="Cursos">
+                <span>Cursos</span>
+            </a>
+            <a href="#" class="menu-button">
+                <img src="src/conferenciante.gif" alt="Docentes">
+                <span>Docentes</span>
+            </a>
+            <a href="#" class="menu-button">
+                <img src="src/subir.gif" alt="Importar">
+                <span>Importar</span>
+            </a>
+        </nav>
+    </header>
+
+    <main class="content">
+        <section class="table-section">
+            <table id="estudiantesTable">
+                <thead>
+                    <tr>
+                        <th>#</th> 
+                        <th>Nombre Completo</th>
+                        <th>Correo Electrónico</th>
+                        <th>Número de Teléfono</th>
+                        <th>Número de Identificación</th>
+                        <th>Matricular</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Los datos de los estudiantes se cargarán aquí -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- Botones flotantes -->
+    <div class="floating-buttons">
+        <a href="#" class="floating-button" onclick="mostrarEstudiantesCurso('decimo')">Décimo</a>
+        <a href="#" class="floating-button" onclick="mostrarEstudiantesCurso('onceavo')">Onceavo</a>
+        <a href="#" class="floating-button" onclick="mostrarEstudiantesCurso('doceavo')">Doceavo</a>
+    </div>
+
+   <!-- Modal para registrar estudiantes -->
+<div id="registroModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button" onclick="cerrarFormulario()">&times;</span>
+        <h2>Matricular Estudiante</h2>
+        <form id="formMatricula">
+            <label for="DNI">Número de Identificación:</label>
+            <input type="text" id="identidad" required readonly>
+            <label for="nombreCompleto">Nombre Completo:</label>
+            <input type="text" id="nombreCompleto" required readonly>
+            <label for="correo">Correo Electrónico:</label>
+            <input type="text" id="correo" required readonly>
+            <label for="telefono">Teléfono:</label>
+            <input type="text" id="telefono" required readonly>
+            <div class="combobox">
+                <label for="curso">Grado:</label>
+                <select id="curso" name="curso" required>
+                    <option value="1">Décimo</option>
+                    <option value="2">Onceavo</option>
+                    <option value="3">Doceavo</option>
+                </select>
+                
+                <label for="seccion">Sección:</label>
+                <select id="seccion" name="seccion" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </div>
+            <button type="submit">Matricular</button>
+        </form>
+    </div>
+</div>
+<!-- Modal para visualizar estudiantes de un curso -->
+<div id="visualizarEstudiantesModal" class="modal-decimo">
+    <div class="modal-content-decimo">
+        <span class="close-button" onclick="cerrarFormulario()">&times;</span>
+        <h2>Estudiantes del Curso Onceavo</h2>
+        <table id="estudiantesCursoTable">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nombre Completo</th>
+                    <th>Correo Electrónico</th>
+                    <th>Número de Teléfono</th>
+                    <th>Número de Identificación</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Los datos de los estudiantes del curso se cargarán aquí -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

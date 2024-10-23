@@ -1,0 +1,106 @@
+/* Reset basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #273746; /* Color de fondo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Altura completa de la ventana */
+    font-size: 22px;
+    overflow: hidden; /* Ocultar cualquier desplazamiento fuera de la pantalla */
+}
+
+.menu {
+    display: flex;
+    flex-direction: row; /* Alineación horizontal */
+    align-items: center; /* Centrado vertical */
+    gap: 25px; /* Espaciado entre botones */
+}
+
+.menu-button {
+    display: flex;
+    flex-direction: column; /* Texto debajo de la imagen */
+    align-items: center; /* Centrado horizontal */
+    text-decoration: none; /* Sin subrayado */
+    background-color: #ffff; /* Color de fondo del botón */
+    color: #273746; /* Color del texto */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interno */
+    width: 150px; /* Ancho fijo */
+    text-align: center; /* Centrado del texto */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    position: relative; /* Para animaciones de borde */
+    overflow: hidden; /* Ocultar el contenido extra */
+    opacity: 0; /* Inicialmente invisible */
+    transform: translateY(-200px); /* Posición inicial fuera de pantalla */
+    animation: drop-in 0.8s ease forwards; /* Animación de caída */
+}
+
+/* Animación de caída */
+@keyframes drop-in {
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Volver a la posición original */
+    }
+}
+
+/* Aplicamos un retraso a cada botón */
+.menu-button:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.menu-button:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.menu-button:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.menu-button:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.menu-button img {
+    width: 80px; /* Ancho de las imágenes */
+    height: 80px; /* Alto de las imágenes */
+}
+
+.menu-button span {
+    color: #273746; /* Color del texto */
+    margin-top: 10px; /* Espacio entre la imagen y el texto */
+}
+
+/* Efecto de selección con línea */
+.menu-button span:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px; /* Grosor de la línea */
+    background: #273746; /* Color de la línea */
+    transform: scaleX(0); /* Inicialmente oculto */
+    transition: transform 0.3s; /* Transición para el efecto */
+}
+
+.menu-button:hover span:after {
+    transform: scaleX(1); /* Mostrar la línea al pasar el ratón */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .menu-button {
+        width: 120px; /* Ajustar el ancho para pantallas pequeñas */
+        padding: 15px; /* Ajustar el espaciado interno */
+    }
+
+    .menu-button img {
+        width: 40px; /* Ajustar el tamaño de las imágenes */
+        height: 40px; /* Ajustar el tamaño de las imágenes */
+    }
+}

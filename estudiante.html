@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Estudiantes</title>
+    <link rel="stylesheet" href="styleestudiante.css">
+    <script type="module" src="scriptEstudiantes.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="menu active">
+            <a href="estudiante.html" class="menu-button">
+                <img src="src/alumno.gif" alt="Estudiantes">
+                <span>Estudiantes</span>
+            </a>
+            <a href="curso.html" class="menu-button">
+                <img src="src/libro-electronico.gif" alt="Cursos">
+                <span>Cursos</span>
+            </a>
+            <a href="#" class="menu-button">
+                <img src="src/conferenciante.gif" alt="Docentes">
+                <span>Docentes</span>
+            </a>
+            <a href="#" class="menu-button">
+                <img src="src/subir.gif" alt="Importar">
+                <span>Importar</span>
+            </a>
+        </nav>
+    </header>
+
+    <main class="content">
+        <section class="table-section">
+            <table id="estudiantesTable">
+                <thead>
+                    <tr>
+                        <th>#</th> 
+                        <th>Nombre Completo</th>
+                        <th>Correo Electrónico</th>
+                        <th>Número de Teléfono</th>
+                        <th>Número de Identificación</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Los datos de los estudiantes se cargarán aquí -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- Botones flotantes -->
+    <div class="floating-buttons">
+        <a href="#" id="buscar" class="floating-button" onclick="verBuscar()">Buscar</a>
+        <a href="#" class="floating-button" onclick="verRegistrar()">Registrar</a> 
+    </div>
+
+    <!-- Modal para registrar estudiantes -->
+    <div id="registroModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="cerrarFormulario()">&times;</span>
+            <h2>Registrar Estudiante</h2>
+            <form id="formRegistro">
+                <label for="nombreCompleto">Nombre Completo:</label>
+                <input type="text" id="nombreCompleto" required>
+
+                <label for="correo">Correo Electrónico:</label>
+                <input type="email" id="correo" required>
+
+                <label for="telefono">Número de Teléfono:</label>
+                <input type="tel" id="telefono" required>
+
+                <label for="identidad">Número de Identificación:</label>
+                <input type="text" id="identidad" required>
+
+                <button type="submit">Registrar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal para buscar estudiantes -->
+    <div id="busquedaModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="cerrarFormulario()">&times;</span>
+            <h2>Buscar Estudiante</h2>
+            <form id="formBusqueda">
+                <label for="identidadBusqueda">Número de Identificación:</label>
+                <input type="text" id="identidadBusqueda" required>
+
+                <button type="submit">Buscar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal para modificar estudiantes -->
+    <div id="modificarModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="cerrarFormulario()">&times;</span>
+            <h2>Modificar Estudiante</h2>
+            <form id="formModificar">
+                <label for="modificarNombre">Nombre Completo:</label>
+                <input type="text" id="modificarNombre" required>
+
+                <label for="modificarCorreo">Correo Electrónico:</label>
+                <input type="email" id="modificarCorreo" required>
+
+                <label for="modificarTelefono">Número de Teléfono:</label>
+                <input type="tel" id="modificarTelefono" required>
+
+                <label for="modificarIdentidad">Número de Identificación:</label>
+                <input type="text" id="modificarIdentidad" required readonly>
+
+                <button type="submit">Modificar</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
